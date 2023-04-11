@@ -3,27 +3,41 @@
 // 3 -> 1, 8, 27
 // 5 -> 1, 8, 27, 64, 125
 
-cube(Read());
-
-int Read()
+internal class Program
 {
-    System.Console.Write("Введи число: ");
-    int number;
-    while (!int.TryParse(Console.ReadLine(), out number))
+    private static void Main(string[] args)
     {
-        System.Console.WriteLine("Вводи цифры!");
-    }
-    return number;
-}
+        cube(Read());
 
-void cube(int number)
-{
-    int num = 1;
-    int L = Read();
-    while (num <= L)
-    {
-        double i=Math.Pow(num, 3);
-        Console.Write(i+" ");
-        num++;
+        int Read()
+        {
+            Console.Write("Введи число: ");
+            int number;
+            while (!int.TryParse(Console.ReadLine(), out number))
+            {
+                Console.WriteLine("Вводи цифры!");
+            }
+            return number;
+        }
+
+        void cube(int num)
+        {
+
+// можно использовать цикл "for"
+// 
+//          for (double i = 1; i < num; i++)
+//          {
+//              double cb = Math.Pow(i, 3);
+//              Console.Write(cb+" ");
+//          }
+
+            int i = 1;
+            while (i <= num)
+            {
+                double cb = Math.Pow(i, 3);
+                Console.Write(cb + " ");
+                i++;
+            }
+        }
     }
 }
